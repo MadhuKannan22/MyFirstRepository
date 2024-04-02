@@ -30,7 +30,6 @@ interface RegisterDatabaseDao {
     @Delete
     suspend fun deleteUser(registerEntity: RegisterEntity)
 
-    /*@Query("DELETE FROM user_table WHERE ItemId == :itemId")
-    suspend fun deleteItemUsingId(itemId: String) :Int*/
+
 
 }
