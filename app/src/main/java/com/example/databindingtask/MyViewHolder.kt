@@ -28,19 +28,14 @@ class MyViewHolder(private val deleteCallback: (RegisterEntity) -> Unit) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(register: RegisterEntity) {
-            val holder = UserViewHolder(binding)
+            //val holder = UserViewHolder(binding)
             binding.userId = register
             binding.password = register
             binding.decelerate.setOnClickListener {
                 deleteCallback(register)
             }
             binding.executePendingBindings()
-            /*binding.rowLayout.setOnClickListener {
-                val action =
-                    UserListFragmentDirections.actionUserListFragmentToUpdateFragment(register)
-                holder.itemView.findNavController().navigate(action)
 
-            }*/
         }
     }
 
