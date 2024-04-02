@@ -32,27 +32,15 @@ class UserListFragment : Fragment(R.layout.fragment_user_list) {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//        val registerEntity = RegisterEntity(0,"Username","Password")
-//        binding = FragmentUserListBinding.inflate(inflater, container, false)
-//        return binding.root
-        //val binding = DataBindingUtil.inflate<CardViewDesignBinding>(inflater,R.layout.fragment_user_list,container,false)
-        /*inflate(
-            inflater, R.layout.fragment_user_list, container, false
-        )*/
         val view = inflater.inflate(R.layout.fragment_user_list,container,false)
-        /*view?.let { setupRecyclerView(it) }
-        val registerEntity = RegisterEntity(0, "Id", "Password")
-        binding.userId = registerEntity
-        binding.password = registerEntity*/
         setupRecyclerView(view)
         return view
     }
 
     private fun setupRecyclerView(view: View) {
-        val registerEntity = RegisterEntity(0, "Id", "Password")
+        //val registerEntity = RegisterEntity(0, "Id", "Password")
         binding = FragmentUserListBinding.bind(view)
         adapter = MyViewHolder{registerEntity ->
-            // Handle item click here
             userListViewModel.deleteUser(registerEntity)}
         binding.designRecyclerview.layoutManager = LinearLayoutManager(requireContext())
         binding.designRecyclerview.adapter = adapter
